@@ -20,20 +20,20 @@ public class Stock extends Screener_base{
 	
 	public String getEPS(){
 		
-		return getElement(EPS_10,30).getText();
+		return getElement(EPS_10,30).getText().replace(",", "");
 	
 	}
 	
 	public double getvalue(String element){
 		//System.out.println(getElement(By.xpath(element),30).getText());
-		return Double.parseDouble(getElement(By.xpath(element),30).getText());
+		return Double.parseDouble(getElement(By.xpath(element),30).getText().replace(",", ""));
 	
 	}
 	
 	public String getEPSgrowthrate_10yrs(){
 		
-		double eps_10yrs = Double.parseDouble(getElement(EPS_10,30).getText());
-		double eps_now =  Double.parseDouble(getElement(EPS_now,30).getText());
+		double eps_10yrs = Double.parseDouble(getElement(EPS_10,30).getText().replace(",", ""));
+		double eps_now =  Double.parseDouble(getElement(EPS_now,30).getText().replace(",", ""));
 		
 		System.out.println("eps_now: " + eps_now);
 		System.out.println("eps_10yrs: " + eps_10yrs);
@@ -58,12 +58,18 @@ public class Stock extends Screener_base{
 		getElement(PE_Chart,30).click();
 		Thread.sleep(10000);
 		getElement(PE_Chart_time,30).click();
-		String medianPE_com = getElement(Median_PE,30).getText();
+		String medianPE_com = getElement(Median_PE,30).getText().replace(",", "");
 		//System.out.println(getElement(Median_PE,30).getText());
 		//String medianPE =Double.toString(medianPE_com.substring(13));
 		return medianPE_com.substring(12); 
+				
+	}
+	
+	public double getCompoundedValue(double current,double r,double years) throws InterruptedException{
 		
-			
+		double temp = current * Math.pow((1.0+(r/100.0)),years);
+		return temp; 
+				
 	}
 
 

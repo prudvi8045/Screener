@@ -29,7 +29,8 @@ public class Screener_tests extends Screener_base{
   @Test(enabled = true)
   public void f() throws InterruptedException {
 	  homepage.Login();
-	  homepage.getStock("TCS");
+	  homepage.getStock("tasty");
+	  double Growth_Rate = 30.0;
 	  String Sector = stock.getSector();
 	  System.out.println("Sector: " + Sector);
 	  System.out.println("EPS Growth rate 10 yrs: " + stock.getEPSgrowthrate_10yrs());
@@ -44,12 +45,20 @@ public class Screener_tests extends Screener_base{
 	  double invest_BV_3 = stock.getvalue(BV_3yrs);
 	  
 	  
+	  
 	  System.out.println("EPS Growth rate 10 yrs: " + stock.getGrowthrate(invest, present, years_10));	  
 	  System.out.println("Book value Growth rate 10 yrs: " + stock.getGrowthrate(invest_BV_10, present_BV_now, years_10));	  
 	  System.out.println("Book value Growth rate 5 yrs: " + stock.getGrowthrate(invest, present_BV_now, years_5));	  
 	  System.out.println("Book value Growth rate 3 yrs: " + stock.getGrowthrate(invest, present_BV_now, years_3));
 	  System.out.println("Historical PE 5 yrs: " + stock.getHistoricalPE(years_5));
-	  
+	  System.out.println("Estimated PE 10 yrs: " + Growth_Rate*2);
+	  double PE_to_be_taken = Math.min(Growth_Rate*2,Double.parseDouble(stock.getHistoricalPE(years_5)));
+	  double EPS_Estimated = stock.getCompoundedValue(present,Growth_Rate,years_10);
+	  System.out.println("Minimun PE to be taken: " + PE_to_be_taken);
+	  System.out.println("EPS estimated to be after 10 yrs: " + EPS_Estimated);
+	  System.out.println("Sticker Price after 10 yrs: " + (PE_to_be_taken * EPS_Estimated));
+	  System.out.println("Sticker Price now to grow at 15% : " + (PE_to_be_taken * EPS_Estimated)/4.0);
+	  System.out.println("MOS Price now to grow at 15% : " + (PE_to_be_taken * EPS_Estimated)/8.0);
 	  //System.out.println("EPS Growth rate 10 yrs: " + stock.getGrowthrate(invest, present, years));
   }
   

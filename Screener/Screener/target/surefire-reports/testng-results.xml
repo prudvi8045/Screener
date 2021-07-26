@@ -2,24 +2,24 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="52142" started-at="2021-07-26T06:54:52Z" finished-at="2021-07-26T06:55:44Z">
+  <suite name="Suite" duration-ms="62007" started-at="2021-07-26T08:08:14Z" finished-at="2021-07-26T08:09:16Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="52142" started-at="2021-07-26T06:54:52Z" finished-at="2021-07-26T06:55:44Z">
+    <test name="Test" duration-ms="62007" started-at="2021-07-26T08:08:14Z" finished-at="2021-07-26T08:09:16Z">
       <class name="tests.Screener_tests">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="beforeClass" is-config="true" duration-ms="10233" started-at="2021-07-26T06:54:52Z" finished-at="2021-07-26T06:55:03Z">
+        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="beforeClass" is-config="true" duration-ms="11650" started-at="2021-07-26T08:08:14Z" finished-at="2021-07-26T08:08:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="loadthepage()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="loadthepage" is-config="true" duration-ms="8165" started-at="2021-07-26T06:55:03Z" finished-at="2021-07-26T06:55:11Z">
+        <test-method status="PASS" signature="loadthepage()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="loadthepage" is-config="true" duration-ms="6410" started-at="2021-07-26T08:08:26Z" finished-at="2021-07-26T08:08:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loadthepage -->
-        <test-method status="PASS" signature="f()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="f" duration-ms="32795" started-at="2021-07-26T06:55:11Z" finished-at="2021-07-26T06:55:44Z">
+        <test-method status="PASS" signature="f()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="f" duration-ms="42789" started-at="2021-07-26T08:08:32Z" finished-at="2021-07-26T08:09:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- f -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="afterClass" is-config="true" duration-ms="940" started-at="2021-07-26T06:55:44Z" finished-at="2021-07-26T06:55:44Z">
+        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.Screener_tests@3b81a1bc]" name="afterClass" is-config="true" duration-ms="1136" started-at="2021-07-26T08:09:15Z" finished-at="2021-07-26T08:09:16Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->

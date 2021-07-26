@@ -8,6 +8,9 @@ public class Stock extends Screener_base{
 	private By sector = By.xpath("//*[@id='peers']/div[1]/div[1]/p/a[1]");
 	private By EPS_10 = By.xpath("//*[@id='profit-loss']//td[contains(text(),'EPS')]/following-sibling::td[2]");
 	private By EPS_now = By.xpath("//*[@id='profit-loss']//td[contains(text(),'EPS')]/following-sibling::td[12]");
+	private By PE_Chart = By.xpath("//*[@id='chart-menu']/div[2]/button[2]");
+	private By PE_Chart_time = By.xpath("//*[@id='chart-menu']/div[2]/button[2]");
+	private By Median_PE = By.xpath("//*[@id='chart-legend']/label[2]/span");
 	
 	public String getSector(){
 		
@@ -22,7 +25,7 @@ public class Stock extends Screener_base{
 	}
 	
 	public double getvalue(String element){
-		
+		//System.out.println(getElement(By.xpath(element),30).getText());
 		return Double.parseDouble(getElement(By.xpath(element),30).getText());
 	
 	}
@@ -49,6 +52,19 @@ public class Stock extends Screener_base{
 		
 			
 	}
+	
+	public String getHistoricalPE(double years){
+		
+		getElement(PE_Chart,30).click();
+		getElement(PE_Chart_time,30).click();
+		String medianPE_com = getElement(Median_PE,30).getText();
+		System.out.println(getElement(Median_PE,30).getText());
+		//String medianPE =Double.toString(medianPE_com.substring(13));
+		return medianPE_com.substring(13); 
+		
+			
+	}
+
 
 
 }

@@ -1,4 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 27.606 sec - in TestSuite
+Tests run: 1, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 29.502 sec <<< FAILURE! - in TestSuite
+f(tests.Screener_tests)  Time elapsed: 12.98 sec  <<< FAILURE!
+java.lang.StringIndexOutOfBoundsException: String index out of range: -7
+	at tests.Screener_tests.f(Screener_tests.java:51)
+

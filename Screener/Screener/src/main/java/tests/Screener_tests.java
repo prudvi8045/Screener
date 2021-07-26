@@ -16,6 +16,10 @@ public class Screener_tests extends Screener_base{
 	Stock stock = new Stock();
 	private String EPS_10 = "//*[@id='profit-loss']//td[contains(text(),'EPS')]/following-sibling::td[2]";
 	private String EPS_now ="//*[@id='profit-loss']//td[contains(text(),'EPS')]/following-sibling::td[12]";
+	private String BV_3yrs ="//*[@id='top-ratios']/li[22]/span[2]/span";
+	private String BV_5yrs ="//*[@id='top-ratios']/li[23]/span[2]/span";
+	private String BV_10yrs ="//*[@id='top-ratios']/li[24]/span[2]/span";
+	private String BV_now ="//*[@id='top-ratios']/li[5]/span[2]/span";
 	
 	
 
@@ -31,9 +35,22 @@ public class Screener_tests extends Screener_base{
 	  System.out.println("EPS Growth rate 10 yrs: " + stock.getEPSgrowthrate_10yrs());
 	  double invest = stock.getvalue(EPS_10);
 	  double present = stock.getvalue(EPS_now);
-	  double years = 10.0;
+	  double years_10 = 10.0;
+	  double years_5 = 5.0;
+	  double years_3 = 3.0;
+	  double invest_BV_10 = stock.getvalue(BV_10yrs);
+	  double present_BV_now = stock.getvalue(BV_now);
+	  double invest_BV_5 = stock.getvalue(BV_5yrs);
+	  double invest_BV_3 = stock.getvalue(BV_3yrs);
 	  
-	  System.out.println("EPS Growth rate 10 yrs: " + stock.getGrowthrate(invest, present, years));
+	  
+	  System.out.println("EPS Growth rate 10 yrs: " + stock.getGrowthrate(invest, present, years_10));	  
+	  System.out.println("Book value Growth rate 10 yrs: " + stock.getGrowthrate(invest_BV_10, present_BV_now, years_10));	  
+	  System.out.println("Book value Growth rate 5 yrs: " + stock.getGrowthrate(invest, present_BV_now, years_5));	  
+	  System.out.println("Book value Growth rate 3 yrs: " + stock.getGrowthrate(invest, present_BV_now, years_3));
+	  //System.out.println("Historical PE 5 yrs: " + stock.getHistoricalPE(years_5));
+	  
+	  //System.out.println("EPS Growth rate 10 yrs: " + stock.getGrowthrate(invest, present, years));
   }
   
 

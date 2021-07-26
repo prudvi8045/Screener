@@ -22,7 +22,7 @@ public class Screener_base {
 	
   @BeforeTest
   public void beforeClass() {
-	  System.out.println("Enetered Before Test function");
+	  //System.out.println("Enetered Before Test function");
 	  
 	  System.setProperty("webdriver.chrome.driver", "src/main/resources/chromedriver.exe");
 	  driver = new ChromeDriver();
@@ -33,7 +33,7 @@ public class Screener_base {
   @BeforeMethod
   public void loadthepage() {
 	  
-	  System.out.println("Enetered Before Method Function");
+	  //System.out.println("Enetered Before Method Function");
 	  
 	  DriverManager.getDriver().manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 
@@ -65,7 +65,7 @@ public class Screener_base {
   @AfterTest
   public void afterClass() {
 	  
-	  System.out.println("Enetered After Test Function");
+	  //System.out.println("Enetered After Test Function");
 	  
 	  DriverManager.getDriver().quit();
 	  

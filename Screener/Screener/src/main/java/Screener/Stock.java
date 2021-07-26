@@ -53,14 +53,15 @@ public class Stock extends Screener_base{
 			
 	}
 	
-	public String getHistoricalPE(double years){
+	public String getHistoricalPE(double years) throws InterruptedException{
 		
 		getElement(PE_Chart,30).click();
+		Thread.sleep(10000);
 		getElement(PE_Chart_time,30).click();
 		String medianPE_com = getElement(Median_PE,30).getText();
-		System.out.println(getElement(Median_PE,30).getText());
+		//System.out.println(getElement(Median_PE,30).getText());
 		//String medianPE =Double.toString(medianPE_com.substring(13));
-		return medianPE_com.substring(13); 
+		return medianPE_com.substring(12); 
 		
 			
 	}

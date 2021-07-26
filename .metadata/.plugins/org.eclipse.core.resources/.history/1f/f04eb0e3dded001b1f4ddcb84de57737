@@ -48,7 +48,7 @@ public class Screener_tests extends Screener_base{
 	  System.out.println("Book value Growth rate 10 yrs: " + stock.getGrowthrate(invest_BV_10, present_BV_now, years_10));	  
 	  System.out.println("Book value Growth rate 5 yrs: " + stock.getGrowthrate(invest, present_BV_now, years_5));	  
 	  System.out.println("Book value Growth rate 3 yrs: " + stock.getGrowthrate(invest, present_BV_now, years_3));
-	  System.out.println("Historical PE 5 yrs: " + stock.getHistoricalPE(years_5));
+	  //System.out.println("Historical PE 5 yrs: " + stock.getHistoricalPE(years_5));
 	  
 	  //System.out.println("EPS Growth rate 10 yrs: " + stock.getGrowthrate(invest, present, years));
   }
